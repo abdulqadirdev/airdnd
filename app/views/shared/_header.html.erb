@@ -1,0 +1,40 @@
+<header class="py-8 bg-black text-white">
+    <div class="container mx-auto px-4">
+        <div class="flex w-full items-center">
+            <div class="flex-none">
+                <a href="#" class="text-2xl">Airdnd</a>
+            </div>
+            <div class="grow w-full">
+                <nav>
+                  <ul class="flex items-center justify-center">
+                    <li class="mx-5">
+                      <a href="#">Places to Stay</a>
+                    </li>
+                    <li class="mx-5">
+                      <a href="#">Experience</a>
+                    </li>
+                    <li class="mx-5">
+                      <a href="#">Online Experience</a>
+                    </li>
+                  </ul>
+                </nav>
+            </div>
+            <div class="flex-none w-20 bg-white text-black p-2 rounded-full">
+                <div>
+                <div class="flex relative">
+                  <a href="#" class="">John</a>
+                  <a href="#"  class="">
+                  <i class="fas fa-bars"></i>
+                  </a>
+                   <ul class="p-3 bg-white absolute right-0 top-8">
+                     <li> <%= button_to  "log Out", destroy_user_session_path, method: :delete, confirm: {data: 'are you sure'} %> </li>
+                     <li><a href="#">abc</a></li>
+                     <li><a href="#">abc</a></li>
+                     <li><a href="#">abc</a></li>
+                   </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
