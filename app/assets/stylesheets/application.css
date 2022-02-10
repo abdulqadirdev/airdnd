@@ -34,3 +34,10 @@ video {
     height: calc(100vh - 104px);
     overflow: hidden;
 }
+.dropdown {
+    opacity: 0;
+    z-index: 5;
+}
+.dropdown.active {
+    opacity: 1;
+}
