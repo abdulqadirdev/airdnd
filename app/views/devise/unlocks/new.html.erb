@@ -1,16 +1,16 @@
 <% content_for :devise_form do %>
-<h2>Resend unlock instructions</h2>
+<h2 class="font-bold text-5xl center font-mono mb-5 text-center">Resend unlock instructions</h2>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, class: 'text-gray-700'  %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
+    <%= f.submit "Resend unlock instructions",class: 'py-1.5 px-6 my-3 block w-full bg-black text-white'  %>
   </div>
 <% end %>
 

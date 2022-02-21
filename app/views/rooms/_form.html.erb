@@ -1,0 +1,94 @@
+<%= form_with(model: room , local: true) do |f| %>
+<div class="px-5">
+ <div class="grid grid-cols-2 gap-3">
+<div class="">
+<%= f.label :home_type, class: 'text-gray-700' %>
+<%= f.text_field :home_type, autofocus: true, class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+ 
+<div class="">
+<%= f.label :room, class: 'text-gray-700' %>
+<%= f.text_field :room, class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+ 
+<div class="">
+<%= f.label :accommodate, class: 'text-gray-700' %>
+<%= f.number_field :accommodate, class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+ 
+<div class="">
+<%= f.label :bed_room, class: 'text-gray-700' %>
+<%= f.number_field :bed_room, class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+ 
+<div class="">
+<%= f.label :bath_room, class: 'text-gray-700' %>
+<%= f.number_field :bath_room, class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+ 
+<div class="">
+<%= f.label :listing_home, class: 'text-gray-700' %>
+<%= f.text_field :listing_home, class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+ 
+<div class="">
+<%= f.label :address, class: 'text-gray-700' %>
+<%= f.text_field :address, class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+ 
+<div class="">
+<%= f.label :price, class: 'text-gray-700' %>
+<%= f.number_field :price, class: ' mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+</div>
+
+<div class="">
+<%= f.label :summary, class: 'text-gray-700' %>
+<%= f.text_area :summary , class: 'h-40 mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black' %>
+</div>
+
+ <div class="grid grid-cols-6 gap-3">
+
+<div class="">
+<%= f.check_box :is_tv , class: 'border-gray-300 border-2 text-black focus:border-gray-300 focus:ring-black' %>
+<%= f.label :is_tv, "TV" %>
+</div>
+
+
+<div class="">
+<%= f.check_box :is_kitchen, class: 'border-gray-300 border-2 text-black focus:border-gray-300 focus:ring-black' %>
+<%= f.label :is_kitchen, "Kitchen" %>
+</div>
+
+<div class="">
+<%= f.check_box :is_air, class: 'border-gray-300 border-2 text-black focus:border-gray-300 focus:ring-black' %>
+<%= f.label :is_air, "AIR" %>
+</div>
+
+<div class="">
+<%= f.check_box :is_heating, class: 'border-gray-300 border-2 text-black focus:border-gray-300 focus:ring-black' %>
+<%= f.label :is_heating, "Heating" %>
+</div>
+
+<div class="">
+<%= f.check_box :is_internet, class: 'border-gray-300 border-2 text-black focus:border-gray-300 focus:ring-black' %>
+<%= f.label :is_internet, "Internet" %>
+</div>
+
+<div class="">
+<%= f.check_box :active, class: 'border-gray-300 border-2 text-black focus:border-gray-300 focus:ring-black' %>
+<%= f.label :active, "active" %>
+</div>
+</div>
+
+
+<div class="">
+<%= f.label :images, 'images' %>
+<%= f.file_field :images, multiple: true %>
+</div>
+
+<div class="actions">
+    <%= f.submit "Add Room",class: 'py-1.5 px-6 my-3 block w-full bg-black text-white' %>
+  </div>
+</div>
+<% end %>

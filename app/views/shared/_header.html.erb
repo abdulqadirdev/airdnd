@@ -22,16 +22,24 @@
             <div class="flex-none w-24 bg-white text-black p-2 rounded-full">
                 <div>
                 <div class="flex relative justify-between">
-                  <a href="#" class="">John</a>
-                  <a href="#"  class="dropdown-btn">
+                  <a href="#" class=""> <%= current_user.username if user_signed_in?%> </a>
+                  <button  class="dropdown-btn">
                   <i class="fas fa-bars"></i>
-                  </a>
-                   <ul class="p-3 bg-white absolute right-0 top-8 w-44 rounded-2xl shadow-xl dropdown">
-                     <li class="border-b border-indigo-500 py-1"> <%= button_to  "log Out", destroy_user_session_path, method: :delete, data:{confirm: 'are you sure'} %> </li>
-                     <li class="border-b border-indigo-500 py-1"><a href="#">abc</a></li>
-                     <li class="border-b border-indigo-500 py-1"><a href="#">abc</a></li>
-                     <li class="border-b border-indigo-500 py-1"><a href="#">abc</a></li>
-                   </ul>
+                  </button>
+                   <ul class="p-3 bg-white absolute right-0 top-10 w-44 rounded-2xl shadow-xl dropdown">
+                      <% if user_signed_in?  %>
+                       <li class="border-b border-gray-200 py-1"><a href="#">manage listings</a></li>
+                     <li class="border-b border-gray-200 py-1"><a href="#">list your space</a></li>
+                     <li class="border-b border-gray-200 py-1"><a href="#">your reservaations</a></li>
+                     <li class="border-b border-gray-200 py-1"><a href="#">your trips</a></li>
+                     <li class="border-b border-gray-200 py-1"><a href="#">edit profile</a></li>
+                     <li class="border-b border-gray-200 py-1"><%= button_to  "log Out", destroy_user_session_path	, method: :delete, data: {turbo: false} %> </li>
+
+                       <% elsif %>
+                     <li class="border-b border-gray-200 py-1"><%= link_to "Log in", new_session_path(resource_name) %></li>
+                      <li class="border-b border-gray-200 py-1"><%= link_to "Sign Up", new_user_registration_path %></li>
+                       <% end %>
+                        </ul>
                 </div>
                 </div>
             </div>

@@ -17,7 +17,9 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -39,7 +41,24 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => "587",
+    :domain => "example.com",
+    :user_name => "abdulqadir.dev1@gmail.com",
+    :password => "aq.dev.ruby",
+    :authentication => "plain",
+    :enable_starttls_auto => true
+  } 
 
   config.action_mailer.perform_caching = false
 
